@@ -1,0 +1,17 @@
+{
+  "name": "NodeWithMongoDB",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "ejs": "^2.5.5",
+    "express": "^3.2.6",
+    "gridfs-stream": "^1.1.1",
+    "jade": "*",
+    "mongodb": "^2.2.16",
+    "mongoose": "^4.7.4",
+    "multer": "^1.2.1"
+  }
+}

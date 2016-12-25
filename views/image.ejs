@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js">
+</script>
+<meta charset=utf-8 />
+<title>Node Js Image Upload</title>
+
+</head>
+<body>
+<form action="/imageUpload" method="POST" enctype="multipart/form-data" class="form-inline">
+<div class="form-group">
+  <img id="uploadPreview" style="width: 100px; height: 100px;" />
+</div>
+<div class="form-group">
+  <input type="text" class="form-control" name="username" placeholder="Enter Your Name" />
+</div>
+
+<div class="form-group">
+  <input id="uploadImage" class="form-control" type="file" name="imagefile" onchange="PreviewImage();" />
+
+<div class="form-group">
+  <input type="submit" value="submit" class="btn btn-primary" />
+ </div>
+</form>
+
+<script type="text/javascript">
+
+    function PreviewImage() {
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("uploadPreview").src = oFREvent.target.result;
+        };
+    };
+
+</script>
+</body>
+</html>
